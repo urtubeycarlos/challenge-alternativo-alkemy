@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  imagen: MyString
+  denominacion: MyString
+  cantHabitantes: 1
+  superficie: 1
+
+two:
+  imagen: MyString
+  denominacion: MyString
+  cantHabitantes: 1
+  superficie: 1
