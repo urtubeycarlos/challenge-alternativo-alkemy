@@ -9,5 +9,6 @@
 #  updated_at   :datetime         not null
 #
 class Continente < ApplicationRecord
+    validates :denominacion, :imagen, presence: true
     has_many :paises
 end
