@@ -13,7 +13,6 @@ module Api
       end
     
       def create
-        puts "Parametros: #{params}"
         @continente = Continente.new(parametros_continente)
         if @continente.save
           render json: @continente, status: :ok
