@@ -4,12 +4,10 @@ module Api
       before_action :set_continente, only: [:show, :update, :destroy]
       
       def index
-        @continentes = Continente.all
-        render json: @continentes, status: :ok
+        @continentes = Continente.all.includes(:paises)
       end
     
       def show
-        render json: @continente, status: :ok
       end
     
       def create
