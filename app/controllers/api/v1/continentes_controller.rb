@@ -4,7 +4,12 @@ module Api
       before_action :set_continente, only: [:show, :update, :destroy]
       
       def index
-        @continentes = Continente.all.includes(:paises)
+        params = query_parametros_continente
+        if params.keys.length > 0
+          @continentes = Continente.filtro_query_params(params).includes(:paises)
+        else
+          @continentes = Continente.all.includes(:paises)
+        end
       end
     
       def show
@@ -38,6 +43,10 @@ module Api
       private
       def parametros_continente
         params.require(:continente).permit(:denominacion, :imagen)
+      end
+
+      def query_parametros_continente
+        params.permit(:denominacion)
       end
 
       def set_continente
